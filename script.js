@@ -17,8 +17,8 @@ const texts = {
 
 let currentLanguage = 'de';
 
-const alwaysHundredPercentNames = ["juri", "Simon", "Julian", "Emin"]; 
-const alwaysZeroPercentNames = ["Vince", "Napoleon", "Putin", "Trump"]; 
+const alwaysHundredPercentNames = ["juri", "simon", "ruian", "gewessler"]; 
+const alwaysZeroPercentNames = ["vincze", "kickl", "putin", "trump", "h&Ouml;cke", "emin", ""]; 
 
 function loadPercentages() {
     const percentages = localStorage.getItem('percentages');
@@ -54,12 +54,17 @@ function calculateLostwolf() {
     } else if (alwaysZeroPercentNames.includes(name)) {
         percentage = 0; 
     } else if (percentages.hasOwnProperty(name)) {
-    
         percentage = percentages[name];
     } else {
         percentage = Math.floor(Math.random() * 101);
         percentages[name] = percentage;
         savePercentages(percentages);
+    }
+
+    if (percentage === 0) {
+        resultElement.innerHTML = texts[currentLanguage].result(name, percentage);
+        resultElement.style.color = "#ffffff";
+        return;
     }
 
     let currentPercentage = 0;
