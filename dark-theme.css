@@ -1,0 +1,87 @@
+/* Dunkles Thema Stilregeln */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column; /* Anordnung in einer Spalte */
+    min-height: 100vh; /* Mindesthöhe des Bildschirms */
+    justify-content: space-between; /* Platzierung zwischen den Elementen */
+    margin: 0;
+    background-color: #121212;
+    color: #fff;
+}
+
+.language-switcher {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.language-switcher select {
+    background-color: #1f1f1f;
+    color: #fff;
+    border: 1px solid #777;
+    border-radius: 5px;
+    padding: 5px;
+    outline: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.language-switcher select:hover {
+    background-color: #333;
+}
+
+.container {
+    text-align: center;
+    background-color: #1f1f1f;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    flex: 1; /* Flexibles Wachstum */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+input[type="text"] {
+    padding: 8px; /* Kleinere Polsterung */
+    width: 30%; /* Breite des Eingabefeldes angepasst */
+    height: 30px; /* Höhe des Eingabefeldes angepasst */
+    margin-bottom: 10px; /* Kleinerer Abstand nach unten */
+    border: 1px solid #777;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+    align-self: center; /* Zentriert das Eingabefeld horizontal */
+}
+
+button {
+    padding: 8px 15px; /* Kleinere Polsterung */
+    border: none;
+    background-color: #007BFF;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    align-self: center; /* Zentriert den Button horizontal */
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.result {
+    margin-top: 20px;
+    font-size: 1.5em;
+}
+
+.result span {
+    color: #FFD700; /* Farbe der Prozentzahl */
+}
+
+/* Verschieben des Copyright-Vermerks nach unten in die Mitte */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #1f1f1f;
+    color: #888;
+}
