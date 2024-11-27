@@ -1,10 +1,10 @@
-/* Dunkles Thema Stilregeln */
+
 body {
     font-family: Arial, sans-serif;
     display: flex;
-    flex-direction: column; /* Anordnung in einer Spalte */
-    min-height: 100vh; /* Mindesthöhe des Bildschirms */
-    justify-content: space-between; /* Platzierung zwischen den Elementen */
+    flex-direction: column; 
+    min-height: 100vh; 
+    justify-content: space-between;
     margin: 0;
     background-color: #121212;
     color: #fff;
@@ -37,32 +37,32 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-    flex: 1; /* Flexibles Wachstum */
+    flex: 1; 
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
 input[type="text"] {
-    padding: 8px; /* Kleinere Polsterung */
-    width: 30%; /* Breite des Eingabefeldes angepasst */
-    height: 30px; /* Höhe des Eingabefeldes angepasst */
-    margin-bottom: 10px; /* Kleinerer Abstand nach unten */
+    padding: 8px; 
+    width: 30%; 
+    height: 30px;
+    margin-bottom: 10px;
     border: 1px solid #777;
     border-radius: 5px;
     background-color: #333;
     color: #fff;
-    align-self: center; /* Zentriert das Eingabefeld horizontal */
+    align-self: center;
 }
 
 button {
-    padding: 8px 15px; /* Kleinere Polsterung */
+    padding: 8px 15px;
     border: none;
     background-color: #007BFF;
     color: #fff;
     border-radius: 5px;
     cursor: pointer;
-    align-self: center; /* Zentriert den Button horizontal */
+    align-self: center; 
 }
 
 button:hover {
@@ -75,10 +75,9 @@ button:hover {
 }
 
 .result span {
-    color: #FFD700; /* Farbe der Prozentzahl */
+    color: #FFD700; 
 }
 
-/* Verschieben des Copyright-Vermerks nach unten in die Mitte */
 footer {
     text-align: center;
     padding: 20px;
