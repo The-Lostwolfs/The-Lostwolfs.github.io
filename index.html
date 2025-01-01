@@ -3,27 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lostwolf-percent-calculator</title>
-    <link rel="stylesheet" href="dark-theme.css">
+    <title>The Lostwolfs</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="language-switcher">
-        <select id="languageSelect" onchange="changeLanguage()">
-            <option value="de">DE</option>
-            <option value="en">EN</option>
-        </select>
+    <div class="navigationbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="pages/lostwolfchecker.html">Lostwolfchecker</a></li>
+            <li><a href="#" id="aurachecker-link">Aurachecker (Bald verfügbar!)</a></li>
+            <li><a href="pages/about.html">About</a></li>
+        </ul> 
     </div>
-    <div class="container">
-        <h1 id="title">Bist du ein Lostwolf?</h1>
-        <input type="text" id="nameInput" placeholder="Gib deinen Namen ein">
-        <button onclick="calculateLostwolf()" id="calculateButton">Berechnen</button>
-        <div class="result" id="result"></div>
+    <div id="auracheckerPopup" class="popup-container">
+        <div class="popup-content">
+            <span class="close-btn" id="closePopup">&times;</span>
+            <h2>Aurachecker</h2>
+            <p>Der Aurachecker ist derzeit noch in Entwicklung. Wir arbeiten daran, dieses Tool bald für dich verfügbar zu machen!</p>
+            <p>Bleib dran und schau bald wieder vorbei.</p>
+        </div>
     </div>
-
-    <script src="script.js"></script>
-
-    <footer id="footer">
-        &copy; 2024 Stzyxh<br>
+    <section class="hero">
+        <h1>The Lostwolfs</h1>
+        <div class="arrow-container">
+            <a href="#section2" class="scroll-arrow">
+                <div class="arrow"></div>
+            </a>
+        </div>
+    </section>
+    <section id="section2">
+        <div class="text-container">
+            <p class="animated-text"><strong>Wilkommen auf der Website der Lostwolfs!</strong></p>
+            <p class="intro-text">Schön, dass du hier bist! Auf unserer Seite findest du nützliche Tools wie den <strong>Lostwolfchecker</strong> und den <strong>Aurachecker</strong>, die dir dabei helfen, herauszufinden ob du ein Lost-wolf bist</p>
+        
+        <div class="contact-form-container">
+            <h2>Kontaktieren Sie uns</h2>
+            <p class="contact-text">Wir hoffen, dass dir unsere Tools gefallen und dir weiterhelfen! Wenn du willst das dein Lost-wolf Prozetsatz immer gleich ist und nicht immer neu generiert wird schreibe uns.</p>
+            <form id="contactForm" onsubmit="sendEmail(); return false;">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">E-Mail:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Betreff:</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Nachricht:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit">Absenden</button>
+            </form>
+        </div>
+    </section>
+    <footer>
+        &copy; 2024 The Lostwolfs
     </footer>
+    <script>
+document.getElementById('aurachecker-link').addEventListener('click', function(event) {
+    event.preventDefault();
+    document.getElementById('auracheckerPopup').style.display = 'flex';
+});
+
+document.getElementById('closePopup').addEventListener('click', function() {
+    document.getElementById('auracheckerPopup').style.display = 'none';
+});
+
+window.addEventListener('click', function(event) {
+    if (event.target === document.getElementById('auracheckerPopup')) {
+        document.getElementById('auracheckerPopup').style.display = 'none';
+    }
+});
+
+       
+       document.querySelector('.scroll-arrow').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector('#section2').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        window.addEventListener('scroll', function() {
+    var section2 = document.querySelector('#section2');
+    var animatedText = document.querySelector('.animated-text');
+    var introText = document.querySelector('.intro-text');
+    
+    var section2Position = section2.getBoundingClientRect().top;
+    var screenPosition = window.innerHeight / 1.5;
+
+    if (section2Position < screenPosition) {
+        animatedText.classList.add('fadeIn');
+    }
+
+    if (introText.getBoundingClientRect().top < screenPosition) {
+        introText.classList.add('fadeIn');
+    }
+});
+
+
+        function sendEmail() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+
+            const mailtoLink = `mailto:amannjuri@proton.me?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nE-Mail: ${email}\nNachricht: ${message}`)}`;
+
+            window.location.href = mailtoLink;
+        }
+
+    </script>
 </body>
 </html>
