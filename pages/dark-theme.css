@@ -11,16 +11,15 @@ body {
     
 }
 
-/* Popup Styling */
 .popup-container {
-    display: none; /* Anfangs nicht sichtbar */
+    display: none;
     position: fixed;
     z-index: 1000;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7); /* Halbtransparenter Hintergrund */
+    background-color: rgba(0, 0, 0, 0.7);
     justify-content: center;
     align-items: center;
 }
@@ -56,17 +55,22 @@ body {
 }
 
 .close-btn {
-    font-size: 30px;
+    font-size: 60px;
     color: #333;
     cursor: pointer;
     position: absolute;
     top: 10px;
     right: 10px;
+    transition: transform 0.3s ease;
+}
+
+.close-btn:hover {
+    transform: scale(1.1);
 }
 
 .language-switcher {
     position: absolute;
-    top: 10px;
+    bottom: 10px;
     right: 10px;
 }
 
@@ -117,6 +121,7 @@ li a {
   li a:hover {
     background-color: black;
     transform: scale(1.1);
+    border-radius: 15px;
 }
 .container {
     text-align: center;

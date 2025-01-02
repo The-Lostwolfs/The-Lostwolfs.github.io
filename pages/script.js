@@ -15,10 +15,25 @@ const texts = {
     }
 };
 
+document.getElementById('aurachecker-link').addEventListener('click', function(event) {
+    event.preventDefault();
+    document.getElementById('auracheckerPopup').style.display = 'flex';
+});
+
+document.getElementById('closePopup').addEventListener('click', function() {
+    document.getElementById('auracheckerPopup').style.display = 'none';
+});
+
+window.addEventListener('click', function(event) {
+    if (event.target === document.getElementById('auracheckerPopup')) {
+        document.getElementById('auracheckerPopup').style.display = 'none';
+    }
+});
+
 let currentLanguage = 'de';
 
 const alwaysHundredPercentNames = ["juri", "simon", "ruian", "gewessler"]; 
-const alwaysZeroPercentNames = ["vincze", "kickl", "putin", "trump", "h&Ouml;cke", "emin", ""]; 
+const alwaysZeroPercentNames = ["vincze", "kickl", "putin", "trump", "höcke", "emin", "afd", "fpö", "övp", "walter rosenkranz", "hitler", "adolf hitler", "nazis", "nzs"]; 
 
 function loadPercentages() {
     const percentages = localStorage.getItem('percentages');
