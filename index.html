@@ -11,16 +11,15 @@
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="pages/lostwolfchecker.html">Lostwolfchecker</a></li>
-            <li><a href="#" id="aurachecker-link">Aurachecker (Bald verfügbar!)</a></li>
-            <li><a href="pages/about.html">Über</a></li>
+            <li><a href="#" id="aurachecker-link">Aurachecker (Available soon!)</a></li>
+            <li><a href="pages/about.html">About</a></li>
         </ul> 
     </div>
-    <div id="auracheckerPopup" class="popup-container">
+    <div id="popupModal" class="popup-modal">
         <div class="popup-content">
-            <span class="close-btn" id="closePopup">&times;</span>
-            <h2>Aurachecker</h2>
-            <p>Der Aurachecker ist derzeit noch in Entwicklung. Wir arbeiten daran, dieses Tool bald für dich verfügbar zu machen!</p>
-            <p>Bleib dran und schau bald wieder vorbei.</p>
+            <span id="close-btn" class="close-btn">&times;</span>
+            <h2>Aura-checker is not avaible right now.</h2>
+            <p>We still work on this feature. Stay tuned! </p>
         </div>
     </div>
     <section class="hero">
@@ -33,12 +32,12 @@
     </section>
     <section id="section2">
         <div class="text-container">
-            <p class="animated-text"><strong>Wilkommen auf der Website der Lostwolfs!</strong></p>
-            <p class="intro-text">Schön, dass du hier bist! Auf unserer Seite findest du nützliche Tools wie den <strong>Lostwolfchecker</strong> und den <strong>Aurachecker</strong>, die dir dabei helfen, herauszufinden ob du ein Lost-wolf bist</p>
+            <p class="animated-text"><strong>Welcome to the Lostwolfs website!</strong></p>
+            <p class="intro-text">Nice that you are here! On our site you will find useful tools such as the <strong>Lostwolfchecker</strong> and the <strong>Aurachecker</strong>, which will help you to find out if you are a Lost-wolf</p>
         
         <div class="contact-form-container">
-            <h2>Kontaktieren Sie uns</h2>
-            <p class="contact-text">Wir hoffen, dass dir unsere Tools gefallen und dir weiterhelfen! Wenn du willst das dein Lost-wolf Prozetsatz immer gleich ist und nicht immer neu generiert wird schreibe uns.</p>
+            <h2>Get in touch with us</h2>
+            <p class="contact-text">WWe hope that you like our tools and that they help you! If you want your Lost-wolf process set to always be the same and not always be regenerated, write to us.</p>
             <form id="contactForm" onsubmit="sendEmail(); return false;">
                 <div class="form-group">
                     <label for="name">Name:</label>
@@ -49,36 +48,45 @@
                     <input type="email" id="email" name="email" required>
                 </div>
                 <div class="form-group">
-                    <label for="subject">Betreff:</label>
+                    <label for="subject">Subject:</label>
                     <input type="text" id="subject" name="subject" required>
                 </div>
                 <div class="form-group">
-                    <label for="message">Nachricht:</label>
+                    <label for="message">Message:</label>
                     <textarea id="message" name="message" rows="5" required></textarea>
                 </div>
-                <button type="submit">Absenden</button>
+                <button type="submit">Send</button>
             </form>
         </div>
     </section>
     <footer>
-        &copy; 2024 The Lostwolfs
+        &copy; 2024 The Lostwolfs. All rights reserved
     </footer>
     <script>
 document.getElementById('aurachecker-link').addEventListener('click', function(event) {
     event.preventDefault();
-    document.getElementById('auracheckerPopup').style.display = 'flex';
+    document.getElementById('popupModal').style.display = 'flex';
 });
 
-document.getElementById('closePopup').addEventListener('click', function() {
-    document.getElementById('auracheckerPopup').style.display = 'none';
-});
+var closeBtn = document.getElementsByClassName('close-btn')[0];
+    
+closeBtn.onclick = function() {
+    document.getElementById('popupModal').classList.add('close-animation');
+    setTimeout(function() {
+        document.getElementById('popupModal').style.display = 'none';
+        document.getElementById('popupModal').classList.remove('close-animation');
+    }, 1000);
+}
 
-window.addEventListener('click', function(event) {
-    if (event.target === document.getElementById('auracheckerPopup')) {
-        document.getElementById('auracheckerPopup').style.display = 'none';
+window.onclick = function(event) {
+    if (event.target == document.getElementById('popupModal')) {
+        document.getElementById('popupModal').classList.add('close-animation');
+        setTimeout(function() {
+            document.getElementById('popupModal').style.display = 'none';
+            document.getElementById('popupModal').classList.remove('close-animation');
+        }, 1000); 
     }
-});
-
+}
        
        document.querySelector('.scroll-arrow').addEventListener('click', function(e) {
             e.preventDefault();

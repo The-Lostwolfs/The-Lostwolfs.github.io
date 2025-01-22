@@ -17,20 +17,30 @@ const texts = {
 
 document.getElementById('aurachecker-link').addEventListener('click', function(event) {
     event.preventDefault();
-    document.getElementById('auracheckerPopup').style.display = 'flex';
+    document.getElementById('popupModal').style.display = 'flex';
 });
 
-document.getElementById('closePopup').addEventListener('click', function() {
-    document.getElementById('auracheckerPopup').style.display = 'none';
-});
+var closeBtn = document.getElementsByClassName('close-btn')[0];
+    
+closeBtn.onclick = function() {
+    document.getElementById('popupModal').classList.add('close-animation');
+    setTimeout(function() {
+        document.getElementById('popupModal').style.display = 'none';
+        document.getElementById('popupModal').classList.remove('close-animation');
+    }, 1000);
+}
 
-window.addEventListener('click', function(event) {
-    if (event.target === document.getElementById('auracheckerPopup')) {
-        document.getElementById('auracheckerPopup').style.display = 'none';
+window.onclick = function(event) {
+    if (event.target == document.getElementById('popupModal')) {
+        document.getElementById('popupModal').classList.add('close-animation');
+        setTimeout(function() {
+            document.getElementById('popupModal').style.display = 'none';
+            document.getElementById('popupModal').classList.remove('close-animation');
+        }, 1000); 
     }
-});
+}
 
-let currentLanguage = 'de';
+let currentLanguage = 'en';
 
 const alwaysHundredPercentNames = ["juri", "simon", "ruian", "gewessler"]; 
 const alwaysZeroPercentNames = ["vincze", "kickl", "putin", "trump", "höcke", "emin", "afd", "fpö", "övp", "walter rosenkranz", "hitler", "adolf hitler", "nazis", "nzs"]; 

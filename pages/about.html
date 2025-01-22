@@ -11,66 +11,36 @@
         <ul>
             <li><a href="../index.html">Home</a></li>
             <li><a href="lostwolfchecker.html">Lostwolfchecker</a></li>
-            <li><a href="#" id="aurachecker-link">Aurachecker (Bald verfügbar!)</a></li>
-            <li><a href="about.html">Über</a></li>
+            <li><a href="#" id="aurachecker-link">Aurachecker (Available soon!)</a></li>
+            <li><a href="about.html">About</a></li>
         </ul> 
     </div>
-    <div id="auracheckerPopup" class="popup-container">
+    <div id="popupModal" class="popup-modal">
         <div class="popup-content">
-            <span class="close-btn" id="closePopup">&times;</span>
-            <h2>Aurachecker</h2>
-            <p>Der Aurachecker ist derzeit noch in Entwicklung. Wir arbeiten daran, dieses Tool bald für dich verfügbar zu machen!</p>
-            <p>Bleib dran und schau bald wieder vorbei.</p>
+            <span id="close-btn" class="close-btn">&times;</span>
+            <h2>Aura-checker is not avaible right now.</h2>
+            <p>We still work on this feature. Stay tuned! </p>
         </div>
     </div>
     <section class="about-hero">
-        <h1>Über die Lostwolfs</h1>
-        <p>Entdecke unsere Welt und Tools, die dir helfen, mehr über dich selbst zu erfahren. Vetrau mir einfach</p>
+        <h1>About the Lostwolfs</h1>
+        <p>Discover our world and tools to help you learn more about the Lostwolf within you. Just trust me</p>
     </section>
 
     <section class="about-content">
         <div class="about-text">
-            <h2>Wer wir sind</h2>
-            <p>Die Lostwolfs sind eine Orgisation aus wahren Lostwolfs (idk was ich schreiben soll) Mit Hilfe Tools möchten wir dir helfen, mehr über dich zu erfahren und deine eigene Lostwolf-Reise zu beginnen.</p>
-
-            <h2>Unsere Tools</h2>
-            <p>Wir bieten dir zwei einzigartige Tools an:</p>
-            <ul>
-                <li><strong>Lostwolfchecker:</strong> Finde heraus, ob du ein Lostwolf bist! yes yes</li>
-                <li><strong>Aurachecker:</strong> Wie Viel Aura hast du? Finde es jetz heraus! </li>
-            </ul>
-
-            <h2>Unsere Vision</h2>
-            <p>Unsere Vision ist es,----- Leeere
-
-            <h2>Kontakt</h2>
-            <p>Hast du Fragen oder möchtest du mehr erfahren? Kontaktiere uns gerne über unser <a href="../index.html#section2">Kontaktformular</a>. Wir freuen uns darauf, von dir zu hören!</p>
+            <h2>Who we are</h2>
+            <p>The Lostwolfs are an organization of true Lostwolfs (idk what to write) With the help of tools we want to help you learn more about yourself and start your own Lostwolf journey.</p>
+            <h2>YES</h2>
+            <p>This Website was developed by <a href="Https//stzyxh.github.io">Stzyxh</a></p>
         </div>
         
-        <div class="about-image">
-            <a href="https://stzyxh.github.io/"><img src="../assests/images/about-image.jpg" alt="Lostwolfs Team" /></a>
-        </div>
     </section>
+    
+    <script src="about_script.js"></script>
 
     <footer>
-        <p>&copy; 2024 Lostwolfs. Alle Rechte vorbehalten.</p>
+        <p>&copy; 2024 Lostwolfs. All rights reserved</p>
     </footer>
-    <script>
-document.getElementById('aurachecker-link').addEventListener('click', function(event) {
-    event.preventDefault();
-    document.getElementById('auracheckerPopup').style.display = 'flex'; 
-});
-
-document.getElementById('closePopup').addEventListener('click', function() {
-    document.getElementById('auracheckerPopup').style.display = 'none'; 
-});
-
-window.addEventListener('click', function(event) {
-    if (event.target === document.getElementById('auracheckerPopup')) {
-        document.getElementById('auracheckerPopup').style.display = 'none';
-    }
-});
-
-    </script>
 </body>
 </html>
