@@ -42,7 +42,7 @@ window.onclick = function(event) {
 
 let currentLanguage = 'en';
 
-const alwaysHundredPercentNames = ["juri", "simon", "ruian", "gewessler", "Benni"]; 
+const alwaysHundredPercentNames = ["juri", "simon", "ruian", "gewessler", "benni"]; 
 const alwaysZeroPercentNames = ["vincze", "kickl", "putin", "trump", "höcke", "emin", "afd", "fpö", "övp", "walter rosenkranz", "hitler", "adolf hitler", "nazis", "nzs"]; 
 
 function loadPercentages() {
